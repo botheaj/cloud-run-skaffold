@@ -1,0 +1,9 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ajwashere
+spec:
+  template:
+    spec:
+      containers:
+      - image: us-docker.pkg.dev/itx-telescope-stage-1/telescope/hello-world

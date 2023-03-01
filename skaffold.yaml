@@ -1,0 +1,17 @@
+apiVersion: skaffold/v4beta2
+kind: Config
+metadata:
+  name: cloud-run-skaffold
+build:
+  artifacts:
+  - image: us-docker.pkg.dev/itx-telescope-stage-1/telescope/hello-world
+    context: web
+    docker:
+      dockerfile: Dockerfile
+manifests:
+  rawYaml:
+  - cloud-run-service.yaml
+deploy:
+  cloudrun:
+    projectid: itx-telescope-stage-1
+    region: us-east4

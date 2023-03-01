@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 8001
+    protocol: TCP
+    targetPort: 8001
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: us-docker.pkg.dev/itx-telescope-stage-1/telescope/hello-world
+        ports:
+        - containerPort: 8001
