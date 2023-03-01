@@ -10,7 +10,7 @@ build:
       dockerfile: Dockerfile
 manifests:
   rawYaml:
-  - ./cloud-run-service.yaml
+  - cloud-run-service.yaml
 deploy:
   cloudrun:
     projectid: itx-telescope-stage-1
