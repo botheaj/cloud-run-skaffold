@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/botheaj/cloud-run-skaffold
     targetRevision: HEAD
-    path: /
+    path: kube
 
   destination:
     server: https://kubernetes.default.svc #on the same cluster, so we can use the internal address
